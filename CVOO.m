@@ -81,8 +81,8 @@ rpm2radps=pi/30;
 % Matriz de Controlo U:
 % U=[da;dr];
 
-% Matriz da Dinâmica A:[ERRADA temos de considerar momentos de inercia]
-A=[ybb yp+0   yr-u0*kn2mps g*cosd(theta0);
+% Matriz da Dinâmica A:[ERRADA temos de considerar momentos de inercia (linhas)]
+A=[ybb yp+aa0*u0*kn2mps   yr-u0*kn2mps g*cosd(theta0);
    lbb lp     lr           0             ;
    nbb np     nr           0             ;
    0   1      tand(theta0) 0             ];
