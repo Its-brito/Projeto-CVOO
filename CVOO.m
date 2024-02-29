@@ -80,7 +80,7 @@ Ldrlin=Ldr+Ixz/Ix*Ndr;
 Ndalin=Nda+Ixz/Iz*Lda;
 Ndrlin=Ndr+Ixz/Iz*Ldr;
 
-
+w0=u0*sin(aa0);
 
 
 %% Modelo Dinâmico para o movimento lateral
@@ -91,10 +91,10 @@ Ndrlin=Ndr+Ixz/Iz*Ldr;
 % U=[da;dr];
 
 % Matriz da Dinâmica A:[Linhas Por calcular]
-A=[ybb/u0     yp/u0+aa0      yr/u0-1    g*cos(theta0)/u0 ;
-   lbblin/u0     lplin         lrlin           0;
-   nbblin/u0     nplin         nrlin           0;
-   0           1          tan(theta0)          0];
+A=[ybb        yp+w0      yr-u0       g*cos(theta0) ;
+   lbblin     lplin      lrlin       0;
+   nbblin     nplin      nrlin       0;
+   0          1          tan(theta0)    0];
 
 % 5ªa linha para angulo de rumo
 %
